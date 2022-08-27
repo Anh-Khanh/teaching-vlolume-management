@@ -9,8 +9,8 @@ const captchaImage = new Captcha(
   "center",
   "middle",
   100,
-  24,
-  "transparent",
+  26,
+  "white",
   "green",
   4
 ).createImage();

@@ -1,5 +1,8 @@
+import HeaderTop from "../../Components/HeaderTop";
 function Home() {
-  return <div>Home</div>;
+  return <div>
+    <HeaderTop/>
+  </div>;
 }
 
 export default Home;
