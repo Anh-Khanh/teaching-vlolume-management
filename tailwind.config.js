@@ -22,6 +22,15 @@ module.exports = {
       boxShadowColor: {
         red: "#9409A0",
       },
+      padding:{
+        10: "10%"
+      },margin:{
+        "1p":"1px",
+        "2p":"2px",
+        "4p":"4px",
+        "6p":"6px",
+        "7p":"7px"
+      }
     },
   },
   plugins: [],

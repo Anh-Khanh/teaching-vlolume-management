@@ -1,6 +1,8 @@
 import Input from "../../Components/Input";
 import MyCaptcha from "../../Components/Captcha";
 import bg from "../../Assets/img/bg.jpg";
+import logoform from "../../Assets/img/logo_dtu_while.png";
+
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
@@ -20,10 +22,7 @@ function Authentication() {
     >
       <div className="w-450 text-white bg-white/10 p-8 rounded-xl shadow-lg shadow-slate-800">
         <div>
-          <img
-            src="https://cdn.duytan.edu.vn/images/icon/logo-duy-tan_vn.png"
-            alt="logo mdtu"
-          />
+          <img src={logoform} alt="logo mdtu" className="block mr-auto ml-auto" />
         </div>
         <div className="mt-6">
           <form action="">
