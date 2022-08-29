@@ -1,10 +1,11 @@
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+
 import Input from "../../Components/Input";
 import MyCaptcha from "../../Components/Captcha";
 import bg from "../../Assets/img/bg.jpg";
 import logoform from "../../Assets/img/logo_dtu_while.png";
-
-import { useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react";
 
 function Authentication() {
   const navigate = useNavigate();
@@ -22,7 +23,11 @@ function Authentication() {
     >
       <div className="w-450 text-white bg-white/10 p-8 rounded-xl shadow-lg shadow-slate-800">
         <div>
-          <img src={logoform} alt="logo mdtu" className="block mr-auto ml-auto" />
+          <img
+            src={logoform}
+            alt="logo mdtu"
+            className="block mr-auto ml-auto"
+          />
         </div>
         <div className="mt-6">
           <form action="">
@@ -56,12 +61,19 @@ function Authentication() {
                 <MyCaptcha ref={refcaptcha} />
               </div>
             </div>
-            <button
-              className="w-full bg-btn text-xl rounded-1 font-bold text-b mt-4 p-2 shadow-lg shadow-rose-500/50 hover:bg-red-500/30  "
+            <Button
+              variant="contained"
+              style={{
+                width: "100%",
+                marginTop: "20px",
+                backgroundColor: "#950B0B",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
               onClick={handleClick}
             >
-              Đăng nhập
-            </button>
+              Contained
+            </Button>
           </form>
         </div>
       </div>
