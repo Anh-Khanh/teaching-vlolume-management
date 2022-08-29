@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
+
 import styles from "./subheader.module.scss";
 const cx = classNames.bind(styles);
 
@@ -63,7 +64,7 @@ if (seconds < 10) {
   return (
     <div className={cx("subheader")}>
       <div className={cx("time")}>
-        {times()}
+        {time}
       </div>
       <div className={cx("date")}>{date()}</div>
     </div>

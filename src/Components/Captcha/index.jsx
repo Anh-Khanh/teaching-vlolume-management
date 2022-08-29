@@ -1,6 +1,7 @@
 import Captcha from "captcha-image";
 import classNames from "classnames/bind";
 import { forwardRef } from "react";
+
 import styles from "./captcha.module.scss";
 const cx = classNames.bind(styles)
 
