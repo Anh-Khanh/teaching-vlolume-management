@@ -1,0 +1,14 @@
+.tableview {
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+}
+.iconrow {
+    cursor: pointer;
+    padding: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
