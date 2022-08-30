@@ -16,10 +16,9 @@ function Home() {
         </div>
       </header>
       <div className="mt-5">
-        <ViewSemester />
+        <ViewSemester></ViewSemester>
       </div>
     </div>
   );
 }
-
 export default Home;

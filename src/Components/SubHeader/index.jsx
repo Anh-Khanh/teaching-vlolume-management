@@ -31,11 +31,9 @@ if (minutes < 10) {
 if (seconds < 10) {
   seconds = "0" + seconds;
 }
-
  const h= String(hour);
  const m = String(minutes);
  const s = String(seconds);
-
    return (
      <div className={`${cx("datetime")}`}>
        <div>
@@ -58,6 +56,7 @@ if (seconds < 10) {
     setTime(times())
    }, 1000);
  },[])
+ 
   useEffect(() => {
     setDates(date());
   }, [dates]);

@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 
 import styles from "./headertop.module.scss";
 import logo from "../../Assets/img/logo_dtu_while.png";
-
+import { Link } from "react-router-dom";
 const cx= classNames.bind(styles)
 function HeaderTop() {
   return (
@@ -16,19 +16,19 @@ function HeaderTop() {
       <div className={cx("topmenu")}>
         <ul className={cx("nav")}>
           <li>
-            <a href="http://localhost:3000/authentication"> Trang chủ </a>
+            <Link to="/authentication"> Trang chủ </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/authentication"> DTU Mail </a>
+            <Link to="/authentication"> DTU Mail </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/authentication"> Learning </a>
+            <Link to="/authentication"> Learning </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/authentication"> Forum </a>
+            <Link to="/authentication"> Forum </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/authentication"> e-Lib </a>
+            <Link to="/authentication"> e-Lib </Link>
           </li>
         </ul>
       </div>
