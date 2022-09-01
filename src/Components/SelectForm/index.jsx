@@ -1,6 +1,6 @@
 import Select from "react-select";
 import {  useState } from "react";
-function SelectForm() {
+function SelectForm(props) {
   const [selectedOption, setSelectedOption] = useState(null);
   const options = [
     { value: "Khánh", label: "Khánh" },
@@ -14,6 +14,7 @@ function SelectForm() {
       ...provided,
       borderBottom: "1px dotted pink",
       color: state.isSelected ? "red" : "black",
+      
     }),
     control: (base) => ({
       ...base,
@@ -23,6 +24,7 @@ function SelectForm() {
       "&:hover": {
         border: "1px solid gray !important",
       },
+      
     }),
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
@@ -33,15 +35,13 @@ function SelectForm() {
   };
 
   return (
-    <div className="w-52">
-      <Select
-        options={options}
-        placeholder="Chon nam hoc"
-        styles={customStyles}
-        onChange={setSelectedOption}
-        
-      />
-    </div>
+    <Select
+      className={`${props.class}`}
+      options={options}
+      placeholder="Chon nam hoc"
+      styles={customStyles}
+      onChange={setSelectedOption}
+    />
   );
 }
 

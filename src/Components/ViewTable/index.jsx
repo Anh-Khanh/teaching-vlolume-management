@@ -17,12 +17,14 @@ import LastPageIcon from "@mui/icons-material/LastPage";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import { HiChevronUp } from "react-icons/hi";
 import classNames from "classnames/bind";
-import styles from "./viewreport.module.scss";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+
+import styles from "./viewtable.module.scss";
+import { pink } from "@mui/material/colors";
 const cx = classNames.bind(styles);
 
-function ViewReport() {
+function ViewTable() {
   function TablePaginationActions(props) {
     const theme = useTheme();
     const { count, page, rowsPerPage, onPageChange } = props;
@@ -122,13 +124,13 @@ function ViewReport() {
   }
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: "bold",
-      border: "2px solid black",
+      border: "1.4px solid black",
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14,
-      border: "2px solid black",
+      border: "1px solid black",
     },
   }));
 
@@ -386,21 +388,18 @@ function ViewReport() {
     },[])
    
   return (
-    <div className={cx("tableview")} >
+    <div className={cx("tableview")}>
       <TableContainer component={Paper} style={{ overflowX: "visible" }}>
-        <Table sx={{}} aria-label="spanning table">
+        <Table size="small" style={{ width: "auto", tableLayout: "auto" }}>
           <TableHead>
             <TableRow>
-              <StyledTableCell rowSpan={2}>STT</StyledTableCell>
+              <StyledTableCell align="center" rowSpan={2}>
+                STT
+              </StyledTableCell>
               <StyledTableCell align="center" rowSpan={2}>
                 MA GIANG VIEN (MYDTU)
               </StyledTableCell>
-              <StyledTableCell
-                align="center"
-                width="300px"
-                rowSpan={3}
-                colSpan={2}
-              >
+              <StyledTableCell align="center" rowSpan={3} colSpan={2}>
                 HỌ VÀ TÊN
               </StyledTableCell>
               <StyledTableCell align="center" colSpan={8}>
@@ -474,6 +473,7 @@ function ViewReport() {
               <StyledTableCell
                 align="center"
                 style={{ backgroundColor: "rgba(128,121,214,0.5)" }}
+                width="20px"
               >
                 GIỜ ĐỨNG LỚP
               </StyledTableCell>
@@ -493,12 +493,19 @@ function ViewReport() {
               : rows
             ).map((row) => (
               <TableRow key={row.id}>
-                <StyledTableCell>{row.id}</StyledTableCell>
-                <StyledTableCell align="center">{row.mAGV}</StyledTableCell>
-                <StyledTableCell align="center" style={{ borderRight: "none" }}>
+                <StyledTableCell align="center">{row.id}</StyledTableCell>
+                <StyledTableCell align="left">{row.mAGV}</StyledTableCell>
+                <StyledTableCell
+                  align="left"
+                  style={{ borderRight: "none" }}
+                  className={cx("tablecell")}
+                >
                   {row.firtName}
                 </StyledTableCell>
-                <StyledTableCell align="center" style={{ borderLeft: "none" }}>
+                <StyledTableCell
+                  align="center"
+                  style={{ borderLeft: "none" }}
+                >
                   {row.lastName}
                 </StyledTableCell>
 
@@ -710,10 +717,16 @@ function ViewReport() {
         </div>
       </div>
       {scroll && (
-        <HiChevronUp color="red" fontSize="40px" className={cx("iconrow")} onClick={()=>{window.scroll(0, 0);}} />
+        <ArrowCircleUpIcon
+          className={cx("iconrow")}
+          sx={{ fontSize: 45, color: pink[500] }}
+          onClick={() => {
+            window.scroll(0, 0);
+          }}
+        />
       )}
     </div>
   );
 }
 
-export default ViewReport;
+export default ViewTable;

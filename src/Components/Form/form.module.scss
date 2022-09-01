@@ -1,0 +1,23 @@
+.form {
+  min-width: 50%;
+  padding: 30px;
+  background: rgb(234, 177, 177);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.line {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+label {
+    font-size: 20px;
+    font-weight: bold;
+    align-items: flex-start;
+    max-width: 50%;
+}

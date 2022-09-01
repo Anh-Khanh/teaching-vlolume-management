@@ -31,7 +31,11 @@ module.exports = {
         "4p":"4px",
         "6p":"6px",
         "7p":"7px"
+      },
+      flex:{
+        0.5:"0.5"
       }
+      
     },
   },
   plugins: [],
