@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
-import SelectForm from "./SelectForm";
-import { Button } from "@mui/material";
+import SelectForm from "../SelectForm";
 
 import style from "./form.module.scss"
+import { default as Button} from "../Button";
 
 const cx = classNames.bind(style)
 
@@ -45,18 +45,7 @@ function Form() {
                 <label htmlFor="">Hệ số lớp</label>
                 <SelectForm class="w-1/2"></SelectForm>
               </div>
-              <Button
-                variant="contained"
-                style={{
-                  width: "100%",
-                  marginTop: "20px",
-                  backgroundColor: "#950B0B",
-                  fontSize: "18px",
-                  fontWeight: "bold",
-                }}
-              >
-                Đăng Nhập
-              </Button>
+              <Button>SUBMIT</Button>
             </form>
           </div>
         </div>

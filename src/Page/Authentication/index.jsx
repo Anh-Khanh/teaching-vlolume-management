@@ -1,7 +1,6 @@
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
-
+import {default as Button} from "../../Components/Button";
 import Input from "../../Components/Input";
 import MyCaptcha from "../../Components/Captcha";
 import bg from "../../Assets/img/bg.jpg";
@@ -62,14 +61,6 @@ function Authentication() {
               </div>
             </div>
             <Button
-              variant="contained"
-              style={{
-                width: "100%",
-                marginTop: "20px",
-                backgroundColor: "#950B0B",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
               onClick={handleClick}
             >
               Đăng Nhập

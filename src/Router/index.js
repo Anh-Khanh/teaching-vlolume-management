@@ -6,5 +6,5 @@ export const publicRouters = [
   { path: "/", component: Home },
   { path: "/report", component: ViewTable },
 ];
-export const privateRouters = [
+export const privateRouters = [    
 ];
