@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
-import SelectForm from "../SelectForm";
 
+import SelectForm from "../SelectForm";
 import style from "./form.module.scss"
 import { default as Button} from "../Button";
 

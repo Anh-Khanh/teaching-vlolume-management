@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 
 import styles from "./headertop.module.scss";
 import logo from "../../Assets/img/logo_dtu_while.png";
-import { Link } from "react-router-dom";
 const cx= classNames.bind(styles)
 function HeaderTop() {
   return (

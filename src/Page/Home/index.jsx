@@ -1,12 +1,12 @@
 import classNames from "classnames/bind";
 
-import styles from "./home.module.scss"
+import styles from "./home.module.scss";
 import HeaderTop from "../../Components/HeaderTop";
 import SubHeader from "../../Components/SubHeader";
-import DaskBoard from "../DashBoard";
-import Form from "../../Components/Form";
+// import DaskBoard from "../DashBoard";
+// import Form from "../../Components/Form";
 import ViewTable from "../../Components/ViewTable";
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 function Home() {
   return (
     <div>
