@@ -38,7 +38,7 @@ function SelectForm(props) {
     <Select
       className={`${props.class}`}
       options={options}
-      placeholder="Chon nam hoc"
+      placeholder={props.placeholder}
       styles={customStyles}
       onChange={setSelectedOption}
     />

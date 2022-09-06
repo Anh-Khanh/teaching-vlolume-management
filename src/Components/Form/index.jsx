@@ -6,44 +6,51 @@ import { default as Button} from "../Button";
 
 const cx = classNames.bind(style)
 
-function Form() {
+function Form(props) {
     return (
       <div className="w-screen relative h-screen">
         <div className={cx("form")}>
           <div className={cx("line")}>
-            <h2 className="text-xl font-semibold">
-              Khối lượng giảng dạy lý thuyết, thực hành…
-            </h2>
+            <h2 className="text-xl font-semibold">{props.children}</h2>
           </div>
           <div className="p-5">
             <form action="">
               <div className="w-full flex justify-between">
                 <label htmlFor="">Mã học phần</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm
+                  placeholder="Mã học phần"
+                  class="w-1/2"
+                ></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Tên học phần giảng dạy</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm
+                  placeholder="Tên học phần giảng dạy"
+                  class="w-1/2"
+                ></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Khối lớp</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm placeholder="Khối lớp" class="w-1/2"></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Loại hình</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm placeholder="Loại hình" class="w-1/2"></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Học kỳ</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm placeholder="Học kỳ" class="w-1/2"></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Số lượng SV</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm
+                  placeholder="Số lượng SV"
+                  class="w-1/2"
+                ></SelectForm>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="">Hệ số lớp</label>
-                <SelectForm class="w-1/2"></SelectForm>
+                <SelectForm placeholder="Hệ số lớp" class="w-1/2"></SelectForm>
               </div>
               <Button>SUBMIT</Button>
             </form>

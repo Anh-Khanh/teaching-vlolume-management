@@ -15,7 +15,7 @@ module.exports = {
         400: "400px",
       },
       width: {
-        450: "400px",
+        450: "450px",
       },
       borderWidth: {
         1: "1px",

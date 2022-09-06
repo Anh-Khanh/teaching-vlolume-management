@@ -386,7 +386,6 @@ function ViewTable() {
     React.useEffect(()=>{
         window.addEventListener("scroll", scrolltable);
     },[])
-   
   return (
     <div className={cx("tableview")}>
       <TableContainer component={Paper} style={{ overflowX: "visible" }}>
