@@ -60,9 +60,7 @@ function Authentication() {
                 <MyCaptcha ref={refcaptcha} />
               </div>
             </div>
-            <Button
-              onClick={handleClick}
-            >
+            <Button width="100%" bgcolor="#950B0B" onClick={handleClick}>
               Đăng Nhập
             </Button>
           </form>

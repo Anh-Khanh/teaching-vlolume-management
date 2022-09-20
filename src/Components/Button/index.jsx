@@ -4,10 +4,11 @@ function Buttons(props) {
   return (
     <Button
       variant="contained"
+      className={props.class}
       style={{
-        width: "100%",
+        width: props.width,
         marginTop: "20px",
-        backgroundColor: "#950B0B",
+        backgroundColor: props.bgcolor,
         fontSize: "18px",
         fontWeight: "bold",
       }}
