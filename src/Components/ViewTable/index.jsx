@@ -1,12 +1,11 @@
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 import TablePagination from "@mui/material/TablePagination";
 import TableFooter from "@mui/material/TableFooter";
 import IconButton from "@mui/material/IconButton";
@@ -19,9 +18,10 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import classNames from "classnames/bind";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-
-import styles from "./viewtable.module.scss";
 import { pink } from "@mui/material/colors";
+
+import  StyledTableCell from "../StyledTableCell";
+import styles from "./viewtable.module.scss";
 const cx = classNames.bind(styles);
 
 function ViewTable() {
@@ -122,17 +122,7 @@ function ViewTable() {
       total,
     };
   }
-  const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      fontSize: 14,
-      fontWeight: "bold",
-      border: "1.4px solid black",
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-      border: "1px solid black",
-    },
-  }));
+ 
 
   const rows = [
     createRow(
@@ -386,6 +376,7 @@ function ViewTable() {
     React.useEffect(()=>{
         window.addEventListener("scroll", scrolltable);
     },[])
+
   return (
     <div className={cx("tableview")}>
       <TableContainer component={Paper} style={{ overflowX: "visible" }}>

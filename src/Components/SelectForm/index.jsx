@@ -21,9 +21,10 @@ function SelectForm(props) {
       ...base,
       border: "1px solid gray !important",
       boxShadow: "1px 1px 1px 1px gray inset!important",
-      fontSize: "14px",
-      height: 30,
-      minHeight: 30,
+      fontSize: "16px",
+      fontWeight: "500",
+      minHeight: `${props.height} !important`,
+      maxHeight: `${props.height}`,
       "&:hover": {
         border: "1px solid gray !important",
       },
@@ -38,7 +39,7 @@ function SelectForm(props) {
   return (
     <Select
       className={`${props.class}`}
-      options={options}
+      options={props.options}
       placeholder={props.placeholder}
       styles={customStyles}
       onChange={setSelectedOption}
