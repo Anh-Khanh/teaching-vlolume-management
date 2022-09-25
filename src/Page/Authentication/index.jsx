@@ -1,46 +1,55 @@
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
 import { default as Button } from "../../Components/Button";
 import Input from "../../Components/Input";
 import MyCaptcha from "../../Components/Captcha";
 import bg from "../../Assets/img/bg.jpg";
 import logoform from "../../Assets/img/logo_dtu_while.png";
-import { useEffect } from "react";
 
 function Authentication() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [captcha, setCaptcha] = useState("");
+  const [checkCaptcha,setCheckCaptcha] = useState(true)
+  const [imgcaptcha,setImgcaptcha] = useState()
   const [reloadcaptcha, setReloadcaptcha] = useState(false);
 
+  const navigate = useNavigate();
   const refcaptcha = useRef();
   const inputpassvalue = useRef()
-  const navigate = useNavigate();
-  let imgcaptcha="";
+
   function keyDown(event) {
+    // Login bang phim enter
     if (event.code==="Enter"){
       if (user === "admin" && pass === "123" && imgcaptcha === captcha) {
-        setReloadcaptcha(false);
+        setCheckCaptcha(true)
         navigate("/");
       }
       else{
         inputpassvalue.current.value =""
+        setCheckCaptcha(false);
       }
     }
   }
+  // login bang click button "dang nhap"
   const handleClick = () => {
     if (user === "admin" && pass === "123" && imgcaptcha === captcha) {
-      setReloadcaptcha(false);
+      setCheckCaptcha(true)
       navigate("/");
     } else {
       inputpassvalue.current.value = "";
-        setReloadcaptcha(true);
+        setCheckCaptcha(false);
     }
   };
-  useEffect(()=>{
-     imgcaptcha = refcaptcha.current.children[0].dataset.key;
-     console.log(imgcaptcha);
-  })
+
+  let useimgcallback = useCallback(
+    () => refcaptcha.current.children[0].dataset.key,[refcaptcha]
+  );
+
+   useEffect(() => {
+     setImgcaptcha(useimgcallback());
+     console.log(checkCaptcha);
+   }, [useimgcallback]);
 
   return (
     <div
@@ -110,12 +119,31 @@ function Authentication() {
                     keyDown(e);
                   }}
                 />
-                <MyCaptcha ref={refcaptcha} />
+                {reloadcaptcha ? (
+                  <MyCaptcha ref={refcaptcha} />
+                ) : (
+                  <MyCaptcha ref={refcaptcha} reload="load" />
+                )}
               </div>
             </div>
-            <Button width="100%" bgcolor="#950B0B" onClick={handleClick}>
-              Đăng Nhập
-            </Button>
+            {checkCaptcha === true ? (
+              <div className="text-right h-[32px] mt-2"></div>
+            ) : (
+              <div className="text-right text-sm  h-[32px] mt-2">
+                Mã xác nhận không hợp lệ
+              </div>
+            )}
+
+            <div>
+              <Button
+                width="100%"
+                bgcolor="#950B0B"
+                onClick={handleClick}
+                size="large"
+              >
+                Đăng Nhập
+              </Button>
+            </div>
           </form>
         </div>
         <div className="text-center mt-2">Copyright© 2022 Đại học Duy Tân.</div>

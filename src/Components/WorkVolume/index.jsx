@@ -1,4 +1,4 @@
-import ManagerSubject from "../Table/ManagerSubject";
+import ManagerClass from "../Table/ManagerClass";
 
 import Button from "../Button"
 import SelectForm from "../SelectForm";
@@ -44,7 +44,7 @@ function WorkVolume() {
           Tiếp tục
         </Button>
       </div>
-      {mclass && <ManagerSubject></ManagerSubject>}
+      {mclass && <ManagerClass></ManagerClass>}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./headertop.module.scss";
-import logo from "../../Assets/img/logo_dtu_while.png";
+import logo from "../../../Assets/img/logo_dtu_while.png";
 const cx= classNames.bind(styles)
 function HeaderTop() {
   return (
@@ -17,7 +17,7 @@ function HeaderTop() {
             <a href="/authentication">
               <div className="flex items-center">
                 <img
-                  src={require("../../Assets/img/iconheader/home.png")}
+                  src={require("../../../Assets/img/iconheader/home.png")}
                   alt="Trang chủ"
                   className="mr-2 w-[26px] h-[20px] object-contain"
                 />
@@ -29,7 +29,7 @@ function HeaderTop() {
             <a href="/authentication">
               <div className="flex items-center">
                 <img
-                  src={require("../../Assets/img/iconheader/email.png")}
+                  src={require("../../../Assets/img/iconheader/email.png")}
                   alt="DTU Mail"
                   className="mr-2 w-[26px] h-[20px] object-contain"
                 />
@@ -41,7 +41,7 @@ function HeaderTop() {
             <a href="/authentication">
               <div className="flex items-center">
                 <img
-                  src={require("../../Assets/img/iconheader/elearning.png")}
+                  src={require("../../../Assets/img/iconheader/elearning.png")}
                   alt="Learning"
                   className="mr-2 w-[26px] h-[20px] object-contain"
                 />
@@ -53,7 +53,7 @@ function HeaderTop() {
             <a href="/authentication">
               <div className="flex items-center">
                 <img
-                  src={require("../../Assets/img/iconheader/diendan.png")}
+                  src={require("../../../Assets/img/iconheader/diendan.png")}
                   alt="Forum"
                   className="mr-2 w-[26px] h-[20px] object-contain"
                 />
@@ -65,7 +65,7 @@ function HeaderTop() {
             <a href="/authentication">
               <div className="flex items-center">
                 <img
-                  src={require("../../Assets/img/iconheader/thuvien.png")}
+                  src={require("../../../Assets/img/iconheader/thuvien.png")}
                   alt="e-Lib"
                   className="mr-2 w-[26px] h-[20px] object-contain"
                 />

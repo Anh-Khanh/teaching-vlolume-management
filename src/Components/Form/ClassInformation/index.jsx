@@ -87,11 +87,11 @@ const options = [
                 <span className="text-lg font-bold">:</span>
                 <Input placeholder="Students" className="w-1/2"></Input>
               </div>
-              <div className="flex justify-around">
-                <Button bgcolor="#950b0b" width="30%">
+              <div className="flex justify-around mt-[20px]">
+                <Button bgcolor="#950b0b" width="30%" size="large">
                   Add
                 </Button>
-                <Button bgcolor="#950b0b" width="30%">
+                <Button bgcolor="#950b0b" width="30%" size="large">
                   Update
                 </Button>
               </div>

@@ -3,13 +3,12 @@ import { Button } from "@mui/material";
 function Buttons(props) {
   return (
     <Button
+      size={props.size}
       variant="contained"
       className={props.class}
       style={{
         width: props.width,
-        marginTop: "20px",
         backgroundColor: props.bgcolor,
-        fontSize: "18px",
         fontWeight: "bold",
       }}
       onClick={props.onClick}

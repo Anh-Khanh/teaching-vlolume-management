@@ -1,11 +1,11 @@
 .container {
-  background-image: url("../../Assets/img/bg-welcome.png");
-  background-repeat: no-repeat;
-  width: 984px;
-  background-size: contain;
+  background: url("../../Assets/img/bg-welcome.png") no-repeat left top;
+  width: 962px;
   margin: auto;
+  margin-left: 17px;
 }
 .container_heading {
+  
   padding-left: 15px;
   color: #fff;
   font-weight: 700;
@@ -20,50 +20,18 @@
   height: 54px;
   padding-right: 30px;
   padding-left: 17px;
+  font-weight: 500;
   line-height: 54px;
- color: #c10000;
+  color: #c10000;
   display: flex;
   align-items: center;
-
 }
 
-.logout {
+.out {
   &:hover {
-    color: #950b0b;
+    color: #950b0b !important;
   }
-}
-.nav_left {
-  height: 100%;
-  background-color: #E5E5E5;
-  border: 1px solid #afafaf;
-}
-.nav_left li {
-  background-color: #ededed;
-  border-top: 1px solid #fff;
-  cursor: pointer;
-}
-.nav_left li p {
-  padding: 6px 20px;
-  &:hover {
-    background-color: #950b0b;
-    color: #fff;
-}
-}
-
-.nav_left_item {
-  display: none;
-}
-
-.nav_left_item li {
-  align-items: center;
-  background-color: #afafaf;
-  padding: 6px 20px;
-  padding-left: 40px;
-  font-weight: 400;
-  &:hover {
-    color: #950b0b;
+  &:hover .logout{
+    color: #950b0b !important;
   }
-}
-.icon{
-  
 }

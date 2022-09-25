@@ -1,10 +1,10 @@
 import classNames from "classnames/bind";
 
 import styles from "./home.module.scss";
-import HeaderTop from "../../Components/HeaderTop";
-import SubHeader from "../../Components/SubHeader";
+import HeaderTop from "../../Components/Header/HeaderTop";
+import SubHeader from "../../Components/Header/SubHeader";
 import Footer from "../../Components/Footer"
-import Nav from "../../Components/Navbar/nav";
+import NavLeft from "../../Components/Navbar";
 
 const cx = classNames.bind(styles);
 function Home() {
@@ -16,8 +16,8 @@ function Home() {
           <SubHeader />
         </div>
       </header>
-      <div className="w-[984px] m-auto ">
-        <Nav></Nav>
+      <div className="w-[984px] m-auto">
+        <NavLeft></NavLeft>
       </div>
       <Footer></Footer>
     </div>

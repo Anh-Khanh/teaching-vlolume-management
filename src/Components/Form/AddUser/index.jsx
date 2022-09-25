@@ -3,9 +3,9 @@ import SelectForm from "../../SelectForm";
 import { default as Button } from "../../Button";
 
 import classNames from "classnames/bind";
-import styles from "./addsubject.module.scss";
+import styles from "./adduser.module.scss";
 const cx = classNames.bind(styles);
-function AddSubject() {
+function AddUser() {
   const options = [
     { value: "2021-2022", label: "2021-2022" },
     { value: "2022-2023", label: "2022-2023" },
@@ -15,45 +15,74 @@ function AddSubject() {
     <div>
       <div className={cx("form")}>
         <div className={cx("line")}>
-          <h2 className="text-xl font-semibold">Add Subject</h2>
+          <h2 className="text-xl font-semibold">User Infomation</h2>
         </div>
         <div className="p-5">
           <form action="">
             <div className="w-full flex justify-between">
               <label htmlFor="" className="w-[30%]">
-                Letter
+                User name
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Letter" className="w-1/2"></Input>
+              <Input placeholder="User name" className="w-1/2"></Input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
-                Number
+                Password
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Number" className="w-1/2"></Input>
+              <Input placeholder="Password" className="w-1/2"></Input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
-                Subject
+                DTU-ID
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Subject" className="w-1/2"></Input>
+              <Input placeholder="DTU-ID" className="w-1/2"></Input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
-                Credit
+                First name
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Credit" className="w-1/2"></Input>
+              <Input placeholder="First name" className="w-1/2"></Input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
-                Type
+                Last name
+              </label>
+              <span className="text-lg font-bold">:</span>
+              <Input placeholder="Last name" className="w-1/2"></Input>
+            </div>
+            <div className="w-full flex justify-between mt-2">
+              <label htmlFor="" className="w-[30%]">
+                International school
               </label>
               <span className="text-lg font-bold">:</span>
               <SelectForm
-                placeholder="Type"
+                placeholder="International school"
+                class="w-1/2"
+                options={options}
+              ></SelectForm>
+            </div>
+            <div className="w-full flex justify-between mt-2">
+              <label htmlFor="" className="w-[30%]">
+                Department
+              </label>
+              <span className="text-lg font-bold">:</span>
+              <SelectForm
+                placeholder="Department"
+                class="w-1/2"
+                options={options}
+              ></SelectForm>
+            </div>
+            <div className="w-full flex justify-between mt-2">
+              <label htmlFor="" className="w-[30%]">
+                Role
+              </label>
+              <span className="text-lg font-bold">:</span>
+              <SelectForm
+                placeholder="Role"
                 class="w-1/2"
                 options={options}
               ></SelectForm>
@@ -63,7 +92,7 @@ function AddSubject() {
                 Add
               </Button>
               <Button bgcolor="#950b0b" width="30%" size="large">
-                Update
+                Cancel
               </Button>
             </div>
           </form>
@@ -73,4 +102,4 @@ function AddSubject() {
   );
 }
 
-export default AddSubject;
+export default AddUser;
