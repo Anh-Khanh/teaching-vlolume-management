@@ -7,13 +7,17 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
-
+import AddYear from "../../Form/AddYear"
 import StyledTableCell from "../../StyledTableCell";
 function ManagerYear() {
+  const [update,setUpdate] = React.useState(true)
   function createData(Id, Start, Finish, CreatedAdd,UpdatedAdd) {
     return { Id, Start, Finish, CreatedAdd, UpdatedAdd };
   }
 
+  const handleUpdate = ()=>{
+      setUpdate(false)
+  }
   const rows = [
     createData(1111, 2020, 2021, "24/05/2021", "24/05/2022"),
     createData(1112, 2020, 2021, "24/05/2021", "24/05/2022"),
@@ -21,9 +25,10 @@ function ManagerYear() {
     createData(1114, 2020, 2021, "24/05/2021", "24/05/2022"),
   ];
   return (
-    <div className="w-[747px]">
+    <div className="w-[720px]">
+      {update ?
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 747 }} size="medium" aria-label="a dense table">
+        <Table sx={{ minWidth: 720 }} size="medium" aria-label="a dense table">
           <TableHead>
             <TableRow style={{}}>
               <StyledTableCell align="center">ID</StyledTableCell>
@@ -50,7 +55,10 @@ function ManagerYear() {
                 <StyledTableCell>{row.CreatedAdd}</StyledTableCell>
                 <StyledTableCell>{row.UpdatedAdd}</StyledTableCell>
                 <StyledTableCell align="center">
-                  <div className="flex justify-center  cursor-pointer">
+                  <div
+                    className="flex justify-center  cursor-pointer "
+                    onClick={handleUpdate}
+                  >
                     <GrUpdate color="#0a7a0a" fontSize={14}></GrUpdate>
                   </div>
                 </StyledTableCell>
@@ -66,7 +74,9 @@ function ManagerYear() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer>:
+      <AddYear></AddYear>
+      }
     </div>
   );
 }

@@ -4,10 +4,17 @@ import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./nav.module.scss";
 
+import { useDispatch } from "react-redux";
+import {ShowForm} from "../../../Redux/Actions/index"
+
 const cx = classNames.bind(styles);
 
 function NavLeft() {
-    const [fuc, setFuc] = useState("Info webpart");
+    const dispatch = useDispatch();
+
+  const lecturer = localStorage.getItem("lecturer");
+  const admin = localStorage.getItem("admin");
+
     useEffect(() => {
       let dem=0;
       const navs = document.querySelectorAll(`.${styles.nav_left}>li`);
@@ -35,7 +42,7 @@ function NavLeft() {
                 const li = item.querySelectorAll("li");
                 li.forEach((text) => {
                   text.onclick = (e) => {
-                    setFuc(e.target.textContent);
+                    dispatch(ShowForm(e.target.textContent));
                   };
                 });
                 
@@ -62,135 +69,152 @@ function NavLeft() {
   return (
     <div className="w-[223px] mr-[12px] min-h-[420px] bg-[#E5E5E5] ">
       <ul className={`${cx("nav_left")}`}>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Year
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Add New Year</p>
+        {admin && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-4 items-center font-medium text-[14px] select-none `}
+            >
+              Year
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Add New Year</p>
+              </li>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p> Update Year</p>
+              </li>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Manager Year</p>
+              </li>
+            </ul>
+          </li>
+        )}
+
+        {admin && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-[41px] items-center font-medium text-[14px] select-none `}
+            >
+              User
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Add new User</p>
+              </li>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Update User</p>
+              </li>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Manager User</p>
+              </li>
+            </ul>
+          </li>
+        )}
+
+        {admin && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-4 items-center font-medium text-[14px] select-none `}
+            >
+              Subject
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Add new Subject</p>
+              </li>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p> Manager Subject</p>
+              </li>
+            </ul>
+          </li>
+        )}
+
+        {lecturer || admin ? (
+            <li>
+              <p
+                className={`${cx(
+                  "item"
+                )} flex pl-4 items-center font-medium text-[14px] select-none `}
+              >
+                Class
+              </p>
+              <ul className={`${cx("nav_left_item")} text-[14px] `}>
+                <li className="flex">
+                  <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                  <p>Add New Class</p>
+                </li>
+                <li className="flex">
+                  <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                  <p>Manager Class</p>
+                </li>
+              </ul>
             </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p> Update Year</p>
-            </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Manager Year</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-[41px] items-center font-medium text-[14px] select-none `}
-          >
-            User
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Add new User</p>
-            </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Update User</p>
-            </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Manager User</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Subject
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Add new Subject</p>
-            </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p> Manager Subject</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Class
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Add New Class</p>
-            </li>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Manager Class</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Personal Detail
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Subject</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Workload
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Manager Workload</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p
-            className={`${cx(
-              "item"
-            )} flex pl-4 items-center font-medium text-[14px] select-none `}
-          >
-            Permission
-          </p>
-          <ul className={`${cx("nav_left_item")} text-[14px] `}>
-            <li className="flex">
-              <AiFillCaretRight className="mr-1"></AiFillCaretRight>
-              <p>Permission</p>
-            </li>
-          </ul>
-        </li>
+          ):<></>}
+        {lecturer && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-4 items-center font-medium text-[14px] select-none `}
+            >
+              Personal Detail
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Subject</p>
+              </li>
+            </ul>
+          </li>
+        )}
+        {lecturer && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-4 items-center font-medium text-[14px] select-none `}
+            >
+              Workload
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Manager Workload</p>
+              </li>
+            </ul>
+          </li>
+        )}
+        {admin && (
+          <li>
+            <p
+              className={`${cx(
+                "item"
+              )} flex pl-4 items-center font-medium text-[14px] select-none `}
+            >
+              Permission
+            </p>
+            <ul className={`${cx("nav_left_item")} text-[14px] `}>
+              <li className="flex">
+                <AiFillCaretRight className="mr-1"></AiFillCaretRight>
+                <p>Permission</p>
+              </li>
+            </ul>
+          </li>
+        )}
       </ul>
     </div>
   );

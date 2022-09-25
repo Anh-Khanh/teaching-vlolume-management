@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from "./classInformationform.module.scss";
-import Input from "../../Input";
 import SelectForm from "../../SelectForm";
 import { default as Button} from "../../Button";
 
@@ -27,7 +26,7 @@ const options = [
                   Class ID
                 </label>
                 <span className="text-lg font-bold">:</span>
-                <Input placeholder="Class ID" className="w-1/2"></Input>
+                <input placeholder="Class ID" className="w-1/2 input"></input>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="" className="w-[30%]">
@@ -67,7 +66,7 @@ const options = [
                   Grade
                 </label>
                 <span className="text-lg font-bold">:</span>
-                <Input placeholder="Grade" className="w-1/2"></Input>
+                <input placeholder="Grade" className="w-1/2 input"></input>
               </div>
               <div className="w-full flex justify-between mt-2">
                 <label htmlFor="" className="w-[30%]">
@@ -85,7 +84,7 @@ const options = [
                   Students
                 </label>
                 <span className="text-lg font-bold">:</span>
-                <Input placeholder="Students" className="w-1/2"></Input>
+                <input placeholder="Students" className="w-1/2 input"></input>
               </div>
               <div className="flex justify-around mt-[20px]">
                 <Button bgcolor="#950b0b" width="30%" size="large">

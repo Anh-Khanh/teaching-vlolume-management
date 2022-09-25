@@ -1,4 +1,3 @@
-import Input from "../../Input";
 import SelectForm from "../../SelectForm";
 import { default as Button } from "../../Button";
 
@@ -24,35 +23,35 @@ function AddUser() {
                 User name
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="User name" className="w-1/2"></Input>
+              <input placeholder="User name" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 Password
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Password" className="w-1/2"></Input>
+              <input placeholder="Password" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 DTU-ID
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="DTU-ID" className="w-1/2"></Input>
+              <input placeholder="DTU-ID" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 First name
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="First name" className="w-1/2"></Input>
+              <input placeholder="First name" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 Last name
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Last name" className="w-1/2"></Input>
+              <input placeholder="Last name" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">

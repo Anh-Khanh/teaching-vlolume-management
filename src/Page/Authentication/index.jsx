@@ -1,54 +1,59 @@
 import { useNavigate } from "react-router-dom";
 import { useCallback, useRef, useState, useEffect } from "react";
+
 import { default as Button } from "../../Components/Button";
-import Input from "../../Components/Input";
 import MyCaptcha from "../../Components/Captcha";
 import bg from "../../Assets/img/bg.jpg";
 import logoform from "../../Assets/img/logo_dtu_while.png";
+import FechApi from "../../fectch"
 
 function Authentication() {
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
-  const [captcha, setCaptcha] = useState("");
+  const navigate = useNavigate();
   const [checkCaptcha,setCheckCaptcha] = useState(true)
   const [imgcaptcha,setImgcaptcha] = useState()
-  const [reloadcaptcha, setReloadcaptcha] = useState(false);
+  const [data,setData] = useState([])
 
-  const navigate = useNavigate();
   const refcaptcha = useRef();
-  const inputpassvalue = useRef()
+  const inputPassValue = useRef();
+  const inputUserValue = useRef()
+  const inputCaptchaValue = useRef()
 
-  function keyDown(event) {
-    // Login bang phim enter
-    if (event.code==="Enter"){
-      if (user === "admin" && pass === "123" && imgcaptcha === captcha) {
-        setCheckCaptcha(true)
-        navigate("/");
-      }
-      else{
-        inputpassvalue.current.value =""
-        setCheckCaptcha(false);
-      }
-    }
+  // Login 
+  function handlLogin(event) {
+    const obj = {
+      user: inputUserValue.current.value,
+      password: inputPassValue.current.value,
+      captcha: inputCaptchaValue.current.value,
+    };
+    data.forEach((item)=>{
+    if (event.code==="Enter" || event.type ==="click" ){
+      // kiem tra dang nhap
+        if (obj.user === item.user && obj.password === item.password && imgcaptcha === obj.captcha) {
+          localStorage.setItem(obj.user , JSON.stringify( item.user));
+          setCheckCaptcha(true);
+          navigate("/");
+        } else {
+          setCheckCaptcha(false);
+          inputPassValue.current.value = "";
+        }
+    } 
+    })
   }
-  // login bang click button "dang nhap"
-  const handleClick = () => {
-    if (user === "admin" && pass === "123" && imgcaptcha === captcha) {
-      setCheckCaptcha(true)
-      navigate("/");
-    } else {
-      inputpassvalue.current.value = "";
-        setCheckCaptcha(false);
-    }
-  };
 
   let useimgcallback = useCallback(
-    () => refcaptcha.current.children[0].dataset.key,[refcaptcha]
+    () => refcaptcha.current.children[0].dataset.key,
+    []
   );
 
    useEffect(() => {
+     const apiLogin = "http://localhost:3001/login";
+    FechApi(apiLogin).then((data)=>{
+      setData([...data]);
+    })
+   }, []);
+
+   useEffect(() => {
      setImgcaptcha(useimgcallback());
-     console.log(checkCaptcha);
    }, [useimgcallback]);
 
   return (
@@ -70,35 +75,31 @@ function Authentication() {
               <label htmlFor="username" className="mr-2 ">
                 Tên Đăng nhập:
               </label>
-              <Input
-                className="input_authen"
-                tabindex="1"
+              <input
+                className="w-[50%] input"
+                tabIndex="1"
+                type="text"
                 style={{ height: "30px" }}
                 placeholder="Nhập Tên đăng nhập"
-                handlOnChange={(value) => {
-                  setUser(value);
-                }}
+                ref={inputUserValue}
                 onKeyDown={(e) => {
-                  keyDown(e);
+                  handlLogin(e);
                 }}
-              />
+              ></input>
             </div>
             <div className="mt-4 flex justify-between">
               <label htmlFor="password" className="mr-2">
                 Mật khẩu:
               </label>
-              <Input
-                refs={inputpassvalue}
-                className="input_authen"
+              <input
+                className="w-[50%] input"
+                ref={inputPassValue}
                 type="password"
                 style={{ height: "30px" }}
-                tabindex="2"
+                tabIndex="2"
                 placeholder="Nhập Mật khẩu"
-                handlOnChange={(value) => {
-                  setPass(value);
-                }}
                 onKeyDown={(e) => {
-                  keyDown(e);
+                  handlLogin(e);
                 }}
               />
             </div>
@@ -106,24 +107,18 @@ function Authentication() {
               <label htmlFor="" className="mr-2">
                 Mã xác nhận:
               </label>
-              <div className="flex">
-                <Input
-                  className="input_authen w-24 mr-3"
-                  tabindex="3"
+              <div className="flex w-[50%]">
+                <input
+                  className="w-[50%] mr-3 input"
+                  ref={inputCaptchaValue}
+                  tabIndex="3"
                   placeholder="Captcha"
                   style={{ height: "30px" }}
-                  handlOnChange={(value) => {
-                    setCaptcha(value);
-                  }}
                   onKeyDown={(e) => {
-                    keyDown(e);
+                    handlLogin(e);
                   }}
-                />
-                {reloadcaptcha ? (
-                  <MyCaptcha ref={refcaptcha} />
-                ) : (
-                  <MyCaptcha ref={refcaptcha} reload="load" />
-                )}
+                ></input>
+                <MyCaptcha ref={refcaptcha} reload="load" />
               </div>
             </div>
             {checkCaptcha === true ? (
@@ -138,7 +133,9 @@ function Authentication() {
               <Button
                 width="100%"
                 bgcolor="#950B0B"
-                onClick={handleClick}
+                onClick={(e) => {
+                  handlLogin(e);
+                }}
                 size="large"
               >
                 Đăng Nhập

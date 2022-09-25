@@ -43,7 +43,7 @@ const rows = [
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 747 }} aria-label="customized table">
+      <Table sx={{ minWidth: 720 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>#</StyledTableCell>

@@ -24,9 +24,9 @@ function ManagerClass() {
     createData("2223CMU SE 403-1", "CMU-SE 403 AIS", 2022, 1, 40, "NĐM"),
   ];
   return (
-    <div className="w-[747px]">
+    <div className="w-[720px]">
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 747 }} size="medium" aria-label="a dense table">
+        <Table sx={{ minWidth: 720 }} size="medium" aria-label="a dense table">
           <TableHead>
             <TableRow style={{}}>
               <StyledTableCell align="center">ClassID</StyledTableCell>

@@ -21,9 +21,9 @@ function ManagerSubject() {
       createData("CMU-ENG 230 EIS3", "AVCN cho SV CMU2", 40, "Update"),
     ];
   return (
-    <div className="w-[747px]">
+    <div className="w-[720px]">
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 747 }} size="medium" aria-label="a dense table">
+        <Table sx={{ minWidth: 720 }} size="medium" aria-label="a dense table">
           <TableHead>
             <TableRow style={{}}>
               <StyledTableCell align="center">Class Name</StyledTableCell>

@@ -17,14 +17,16 @@ import ManagerYear from "../Table/ManagerYear";
 import AddYear from "../Form/AddYear";
 import Tippy from "@tippyjs/react";
 import NavLeft from "./Nav";
+import { useSelector } from "react-redux";
 
 const cx = classNames.bind(styles);
 
 function Nav() {
-  const [form, setForm] = useState("Add New Class");
-  
+  const forms = useSelector((data)=>data.form);
+  const {form}=forms;
   const navigate = useNavigate();
   const handlelogout = () => {
+    localStorage.clear("lecturer");
     navigate("/authentication");
   };
   return (

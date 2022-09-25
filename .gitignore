@@ -4,11 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-Components/
 
 # testing
 /coverage
-
+Components/
 # production
 /build
 

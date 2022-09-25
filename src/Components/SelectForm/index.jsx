@@ -1,16 +1,9 @@
 import Select from "react-select";
-import {  useState } from "react";
+// import {  useState } from "react";
 
 
 function SelectForm(props) {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const options = [
-    { value: "Khánh", label: "Khánh" },
-    { value: "Anh khánh", label: "Anh khánh" },
-    { value: "Lê Anh Khánh", label: "Lê Anh Khánh" },
-  ];
-  // console.log(selectedOption);
-
+  // const [selectedOption, setSelectedOption] = useState(null);
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -25,6 +18,7 @@ function SelectForm(props) {
       fontWeight: "500",
       minHeight: `${props.height} !important`,
       maxHeight: `${props.height}`,
+      height: `38px`,
       "&:hover": {
         border: "1px solid gray !important",
       },
@@ -42,7 +36,8 @@ function SelectForm(props) {
       options={props.options}
       placeholder={props.placeholder}
       styles={customStyles}
-      onChange={setSelectedOption}
+      // onChange={setSelectedOption}
+      
     />
   );
 }

@@ -5,9 +5,7 @@ import GlobalStyle from "./Components/GlobalStyles";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { legacy_createStore as createStore } from "redux";
-import rootReducer from "./Redux/Reducers/index";
-const store = createStore(rootReducer);
+import store from "./Redux/store"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

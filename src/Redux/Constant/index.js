@@ -1,1 +1,1 @@
-export const SET_FORM = "Info webpart";
+export const SET_FORM = "SET_FORM";

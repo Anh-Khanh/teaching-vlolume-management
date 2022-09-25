@@ -5,6 +5,7 @@ const cx = classNames.bind(style);
 function Input(props) {
   return (
     <input
+      defaultValue={props.value}
       ref={props.refs}
       style={props.style}
       className={`${props.className} ${cx("input")} placeholder:text-sm`}

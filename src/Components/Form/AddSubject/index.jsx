@@ -1,4 +1,3 @@
-import Input from "../../Input";
 import SelectForm from "../../SelectForm";
 import { default as Button } from "../../Button";
 
@@ -24,28 +23,28 @@ function AddSubject() {
                 Letter
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Letter" className="w-1/2"></Input>
+              <input placeholder="Letter" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 Number
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Number" className="w-1/2"></Input>
+              <input  placeholder="Number" className="w-1/2 input "></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 Subject
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Subject" className="w-1/2"></Input>
+              <input placeholder="Subject" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
                 Credit
               </label>
               <span className="text-lg font-bold">:</span>
-              <Input placeholder="Credit" className="w-1/2"></Input>
+              <input placeholder="Credit" className="w-1/2 input"></input>
             </div>
             <div className="w-full flex justify-between mt-2">
               <label htmlFor="" className="w-[30%]">
