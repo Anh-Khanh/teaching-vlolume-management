@@ -7,6 +7,7 @@ function App() {
         {publicRouters.map((e) => (
           <Route key={e.path} path={e.path} element={<e.component/>}></Route>
         ))}
+        
       </Routes>
     </BrowserRouter>
   );
